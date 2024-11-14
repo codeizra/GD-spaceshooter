@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://co8huc8fjoqk3"]
+
+[ext_resource type="Texture2D" uid="uid://bjlfbf4h1rlhs" path="res://Assets/PlayerShip/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Full health.png" id="1_0bwwt"]
+[ext_resource type="Script" path="res://Scripts/move_component.gd" id="2_cetb1"]
+[ext_resource type="Script" path="res://Scripts/move_input_component.gd" id="3_wwowy"]
+[ext_resource type="Resource" uid="uid://u3qxqaeqlp67" path="res://Scenes/Player/ship_move_stats.tres" id="4_ipiri"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjsv7"]
+atlas = ExtResource("1_0bwwt")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gafjm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjsv7")
+}],
+"loop": true,
+"name": &"center",
+"speed": 5.0
+}]
+
+[node name="Ship" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gafjm")
+animation = &"center"
+autoplay = "center"
+
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
+script = ExtResource("2_cetb1")
+actor = NodePath("..")
+
+[node name="MoveInputComponent" type="Node" parent="." node_paths=PackedStringArray("move_component")]
+script = ExtResource("3_wwowy")
+move_stats = ExtResource("4_ipiri")
+move_component = NodePath("../MoveComponent")

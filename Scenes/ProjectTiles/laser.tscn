@@ -1,0 +1,228 @@
+[gd_scene load_steps=34 format=3 uid="uid://bflcurfc8k3nf"]
+
+[ext_resource type="Script" path="res://Scenes/ProjectTiles/laser.gd" id="1_dvgtk"]
+[ext_resource type="Texture2D" uid="uid://c47qvxbwgvxn7" path="res://Assets/PlayerShip/Main ship weapons/PNGs/Main ship weapon - Projectile - Big Space Gun.png" id="1_ve1pb"]
+[ext_resource type="Texture2D" uid="uid://dhtskgr3241ss" path="res://Assets/PlayerShip/Main ship weapons/PNGs/Main ship weapon - Projectile - Auto cannon bullet.png" id="2_g075t"]
+[ext_resource type="Texture2D" uid="uid://i32457yr8r8m" path="res://Assets/PlayerShip/Main ship weapons/PNGs/Main ship weapon - Projectile - Rocket.png" id="3_jgj8m"]
+[ext_resource type="Texture2D" uid="uid://cx6uirlbqokt8" path="res://Assets/PlayerShip/Main ship weapons/PNGs/Main ship weapon - Projectile - Zapper.png" id="4_sc88s"]
+[ext_resource type="Script" path="res://Scripts/move_component.gd" id="5_cfyqk"]
+[ext_resource type="Script" path="res://Scripts/scale_component.gd" id="7_07kqt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmy62"]
+atlas = ExtResource("1_ve1pb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1k3r"]
+atlas = ExtResource("1_ve1pb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jblo"]
+atlas = ExtResource("1_ve1pb")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2hp6"]
+atlas = ExtResource("1_ve1pb")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5c8h"]
+atlas = ExtResource("1_ve1pb")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpa42"]
+atlas = ExtResource("1_ve1pb")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nnpf"]
+atlas = ExtResource("1_ve1pb")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_koupg"]
+atlas = ExtResource("1_ve1pb")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jr8dh"]
+atlas = ExtResource("1_ve1pb")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m10d0"]
+atlas = ExtResource("1_ve1pb")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fr0c"]
+atlas = ExtResource("2_g075t")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86ja6"]
+atlas = ExtResource("2_g075t")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffaew"]
+atlas = ExtResource("2_g075t")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6aaa"]
+atlas = ExtResource("2_g075t")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88xbo"]
+atlas = ExtResource("3_jgj8m")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ewmm"]
+atlas = ExtResource("3_jgj8m")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kb31t"]
+atlas = ExtResource("3_jgj8m")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eohu2"]
+atlas = ExtResource("4_sc88s")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7t44"]
+atlas = ExtResource("4_sc88s")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6oowp"]
+atlas = ExtResource("4_sc88s")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agufm"]
+atlas = ExtResource("4_sc88s")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7adc"]
+atlas = ExtResource("4_sc88s")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pia1c"]
+atlas = ExtResource("4_sc88s")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pqeq"]
+atlas = ExtResource("4_sc88s")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oy1bv"]
+atlas = ExtResource("4_sc88s")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bt1ld"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmy62")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1k3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jblo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2hp6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5c8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpa42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nnpf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_koupg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jr8dh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m10d0")
+}],
+"loop": true,
+"name": &"bigspacegun-bullet",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fr0c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86ja6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffaew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6aaa")
+}],
+"loop": true,
+"name": &"cannon-bullet",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88xbo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ewmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kb31t")
+}],
+"loop": true,
+"name": &"rocket-bullet",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eohu2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7t44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6oowp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agufm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7adc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pia1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2pqeq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oy1bv")
+}],
+"loop": true,
+"name": &"zapper-laser",
+"speed": 5.0
+}]
+
+[node name="Laser" type="Node2D"]
+script = ExtResource("1_dvgtk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bt1ld")
+animation = &"cannon-bullet"
+
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("actor")]
+script = ExtResource("5_cfyqk")
+actor = NodePath("..")
+velocity = Vector2(0, -200)
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(0, 0.5)
+scale = Vector2(0.5, 0.85)
+
+[node name="ScaleComponent" type="Node" parent="." node_paths=PackedStringArray("sprite")]
+script = ExtResource("7_07kqt")
+sprite = NodePath("../AnimatedSprite2D")
+scale_duration = 1.0
